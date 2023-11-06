@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .rect {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      background-color: #e7f5f7;
+      border: 1px solid #cccccc;
+    }
+
+    .ball {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgb(203, 135, 0);
+      border: 1px solid black;
+      pointer-events: none;/* 不要讓元素感應到滑鼠 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rect">
+    
+  </div>
+  <script>
+    const rect = document.querySelector(".rect");
+
+    rect.addEventListener("mousemove", (e) => {
+    const b = document.createElement('div');
+    b.className = "ball";
+    b.style.left = e.offsetX-10 + "px"; // -10 讓滑鼠在球正中間
+    b.style.top = e.offsetY-10 + "px";
+    rect.append(b);
+    });
+  </script>
+</body>
+
+</html>
