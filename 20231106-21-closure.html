@@ -10,15 +10,20 @@
 <body>
 
   <script>
-    const f =(function(){
-      let n =3;
+    const f = (function () {
+      let n = 3;
 
-      return function(a){
+      return function (a) {
         n--;
-        if(n>=0) return a * a;
+        if (n >= 0) return a * a; // return 直接結束函式，回傳a*a
         return null;
       };
     })();
+    
+    console.log(f(7));
+    console.log(f(7));
+    console.log(f(7));
+    console.log(f(7));
   </script>
 </body>
 
