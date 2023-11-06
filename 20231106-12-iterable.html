@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>2</div>
+    <div>3</div>
+    <div>5</div>
+    <div>7</div>
+    <div>9</div>
+
+    <script>
+      const divs = document.querySelectorAll("div");
+      const [div1,div2]=divs;
+      console.log(divs);
+      console.log([...divs]); // 展開為陣列
+      console.log(div1,div2);
+
+      for(let el of divs){
+        el.innerText=el.innerText*el.innerText;
+      }
+      
+    </script>
+  </body>
+</html>
