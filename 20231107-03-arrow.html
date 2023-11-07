@@ -14,7 +14,7 @@
       name:"obj",
       myThis:this,
       f1:function(){
-        return this;
+        return this; 
       },
       f2 (){
         return this;
@@ -25,11 +25,11 @@
       }
     };
 
-    console.log(obj.myThis);
-    console.log(obj.f1());
-    console.log(obj.f2());
-    console.log(obj.f3());
-    console.log(obj.f4()());
+    console.log(obj.myThis); // window
+    console.log(obj.f1()); //obj
+    console.log(obj.f2()); //obj
+    console.log(obj.f3()); //window
+    console.log(obj.f4()()); // obj //第一個()呼叫f4，第二個()用來呼叫f4返回的函式
   </script>
 </body>
 
