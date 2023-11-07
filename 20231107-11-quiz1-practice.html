@@ -73,16 +73,16 @@
     })
     
     // 輸入字就搜尋
-    search_in.addEventListener('input',()=>{
-      tbody.innerHTML = products
-        .filter((el) => {
-          return el.bookname.includes(search_in.value);
-        })
-        .map((el, i) => {
-          return itemTpl(el);
-        })
-        .join("");
-    })
+    // search_in.addEventListener('input',()=>{
+    //   tbody.innerHTML = products
+    //     .filter((el) => {
+    //       return el.bookname.includes(search_in.value);
+    //     })
+    //     .map((el, i) => {
+    //       return itemTpl(el);
+    //     })
+    //     .join("");
+    // })
   </script>
 </body>
 
