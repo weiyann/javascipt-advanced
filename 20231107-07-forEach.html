@@ -32,7 +32,7 @@
   <script>
     const tbody = document.querySelector('tbody');
 
-    const itenTpl = ({bookname,price})=>{
+    const itemTpl = ({bookname,price})=>{
       return `
       <tr>
         <td>${bookname}</td>
@@ -43,7 +43,7 @@
 
     let str = '';
     products.forEach((el, i) => {
-      str += itenTpl(el);
+      str += itemTpl(el);
     });
 
     tbody.innerHTML = str;
