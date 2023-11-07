@@ -43,19 +43,15 @@
     const tbody = document.querySelector("tbody");
     const select = document.querySelector("select");
     const products1 = [...products].sort((a, b) => {
-      console.log({ a, b });
       return a.sid-b.sid;
     });
     const products2 = [...products].sort((a, b) => {
-      console.log({ a, b });
       return b.sid-a.sid;
     });
     const products3 = [...products].sort((a, b) => {
-      console.log({ a, b });
       return a.price-b.price;
     });
     const products4 = [...products].sort((a, b) => {
-      console.log({ a, b });
       return b.price-a.price;
     });
 
