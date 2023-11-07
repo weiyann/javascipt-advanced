@@ -73,7 +73,7 @@
     })
     
     // 輸入字就搜尋
-    search_in.addEventListener('change',()=>{
+    search_in.addEventListener('input',()=>{
       tbody.innerHTML = products
         .filter((el) => {
           return el.bookname.includes(search_in.value);
