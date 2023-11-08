@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function myPromise(a = 0) {
+      return new Promise((resolve, reject) => {
+        const ms = 500 + Math.floor(Math.random() * 1000);
+        setTimeout(() => {
+          resolve({ a, ms });
+        }, ms)
+      });
+    }
+    // 兩個async函數沒關聯，結果會穿插
+    (async ()=>{
+      for(let i=1;i<=10;i++){
+      const r1 =await myPromise('x'+i);
+      console.log(r1);
+    }
+    })();
+    (async ()=>{
+      for(let i=1;i<=10;i++){
+      const r1 =await myPromise('y'+i);
+      console.log(r1);
+    }
+    })()
+    
+
+  </script>
+</body>
+
+</html>
