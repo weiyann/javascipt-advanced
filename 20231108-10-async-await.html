@@ -13,23 +13,31 @@
       return new Promise((resolve, reject) => {
         const ms = 500 + Math.floor(Math.random() * 1000);
         setTimeout(() => {
-          resolve({ a, ms });
+          if(Math.random()<0.5){ //一半機率會成功
+            resolve({ a, ms });
+          }else{
+            reject(`error: a: ${a}`);
+          }     
         }, ms)
       });
     }
 
-    async function a(){
-      const r1 =await myPromise(3);
-      console.log(r1);
-      const r2 =await myPromise(4);
+    async function a() {
+      let r1;
+      try {
+        r1 = await myPromise(3);
+        console.log(r1);
+      } catch (ex) {
+        console.log(ex)
+      }
+
+      const r2 = await myPromise(4);
       console.log(r2);
     }
-    console.log('A:', new Date());
-    // a()拿到Promise物件
-    a().then(()=>{
+
+    a().then(() => {
       console.log('B:', new Date())
-    });
-    console.log('C:', new Date());
+    }).catch((ex) => { console.log(ex) });
 
   </script>
 </body>
