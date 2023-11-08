@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // ES6 classes
+
+    class Person {
+      // 屬性預設值，屬性不用宣告
+      gender = male;
+      // 建構函式，初始值在constructor設定
+      constructor(name = "noname", age = 17) {
+        this.name = name;
+        this.age = age;
+      }
+      // 方法
+      getInfo() {
+        return `${this.name}: ${this.age}`
+      }
+      toString() {
+        return JSON.stringify(this);
+      }
+    }
+
+    const p1 = new Person("Bill", 26);
+    console.log(p1.getInfo());
+    console.log(p1);
+    console.log(p1 + "");
+  </script>
+
+</body>
+
+</html>
