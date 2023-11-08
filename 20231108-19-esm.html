@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="module">
+    import fun01, { f2 as fun02, Person, n, m } from "./modules/func03.js";
+
+    console.log(fun01(n));
+    const p1 = new Person("Alex", 27);
+    console.log(p1.toString());
+
+    const obj = {
+      myName: "shin",
+      myAge: 30,
+    };
+    const { myName: myNewName } = obj;
+    console.log({ myNewName });
+
+  </script>
+</body>
+
+</html>
