@@ -14,6 +14,8 @@
       n++;
       history.pushState({n}, '', `?n=${n}`)
     }
+    // pushstate是history的方法
+    // popstate是window的事件處理器
 
     window.addEventListener("popstate",(e)=>{
       console.log(e.state,location.search);
