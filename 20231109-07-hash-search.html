@@ -69,16 +69,20 @@
         .join("");
     };
 
-    let firstHash = decodeURIComponent(location.hash.slice(1) || ""); // decodeURIComponent()將跳脫的文字decode // slice(1)把#切割掉
-    searchField.value=firstHash;
-    renderTable(firstHash); // 一開始進入頁面時
+    const myHashChange = () => {
+      let firstHash = decodeURIComponent(location.hash.slice(1) || "");
+      searchField.value = firstHash;
+      renderTable(firstHash); // 一開始進入頁面時
+    }
+    myHashChange();
+    window.addEventListener("hashchange",myHashChange)
 
-    
+
     function findProducts(e) {
 
       if (e.isComposing) return; // 如果是使用輸入法還沒完成輸入時
       const mySearch = searchField.value.trim();
-      location.hash=`#${mySearch}`
+      location.hash = `#${mySearch}`
       renderTable(mySearch);
     }
   </script>
