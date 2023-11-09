@@ -14,7 +14,7 @@
       <div class="col-6">
         <form class="d-flex" role="search" onsubmit="/* findProducts(); */ return false;">
           <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-            oninput="findProducts(event)" />
+            onkeyup="findProducts(event)" />
           <!--
             <button class="btn btn-outline-success" type="submit">
               Search

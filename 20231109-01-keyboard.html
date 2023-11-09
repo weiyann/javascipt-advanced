@@ -14,8 +14,8 @@
   <script>
     const [input1, input2] = document.querySelectorAll("input");// 拿到NodeList
     const handler = (e) => {
-      const { key, keyCode, which, code } = e;
-      console.log(e.type, { key, keyCode, which, code });
+      const { key, keyCode, which, code, isComposing } = e;
+      console.log(e.type, { key, keyCode, which, code,isComposing });
     }
 
     input1.addEventListener("keydown", handler);
