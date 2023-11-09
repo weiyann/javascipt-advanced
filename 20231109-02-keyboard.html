@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .rect {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      background-color: #e7f5f7;
+      border: 1px solid #cccccc;
+    }
+
+    .ball {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgb(203, 135, 0);
+      border: 1px solid black;
+      pointer-events: none;
+      /* 不要讓元素感應到滑鼠 */
+      /*transition: 1s;*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rect">
+    <div class="ball" style="left: 0px; top: 0px"></div>
+  </div>
+  <script>
+    const ball = document.querySelector(".ball");
+
+    const handler = (e) => {
+      e.preventDefault();
+      console.log(e.code);
+      switch (e.code) {
+        case "ArrowRight":
+        ball.style.left = parseInt(ball.style.left) + 10 + "px";
+          break;
+        case "ArrowLeft":
+        ball.style.left = parseInt(ball.style.left) - 10 + "px";
+          break;
+        case "ArrowUp":
+        ball.style.top = parseInt(ball.style.top) - 10 + "px";
+          break;
+        case "ArrowDown":
+        ball.style.top = parseInt(ball.style.top) + 10 + "px";
+          break;
+      }
+    }
+
+    window.addEventListener("keydown", handler) // 要將window預設的鍵盤事件取消
+  </script>
+</body>
+
+</html>
