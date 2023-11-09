@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .rect {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      background-color: #e7f5f7;
+      border: 1px solid #cccccc;
+    }
+
+    .ball {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgb(203, 135, 0);
+      border: 1px solid black;
+      pointer-events: none;
+      /* 不要讓元素感應到滑鼠 */
+      /*transition: 1s;*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rect">
+    <div class="ball" style="left: 0px; top: 0px"></div>
+  </div>
+  <script>
+    const keyStates = {} // 代表按鍵狀態
+    const ball = document.querySelector(".ball");
+
+    const downHandler = (e) => {
+      e.preventDefault();
+      console.log(e.code);
+      keyStates[e.code] = true // 表示開始按下按鍵
+
+      let cx = parseInt(ball.style.left);
+      let cy = parseInt(ball.style.top);
+
+      if (keyStates.ArrowRight) {
+        cx += 10;
+      }
+      if (keyStates.ArrowLeft) {
+        cx -= 10;
+      }
+      if (keyStates.ArrowUp) {
+        cy -= 10;
+      }
+      if (keyStates.ArrowDown) {
+        cy += 10;
+      }
+      ball.style.left = cx + "px";
+      ball.style.top = cy + "px";
+    }
+
+    const upHandler = (e) => {
+      e.preventDefault();
+      delete keyStates[e.code]; // 表示放開按鍵
+    };
+
+    window.addEventListener("keydown", downHandler);
+    window.addEventListener("keyup", upHandler);
+  </script>
+</body>
+
+</html>
