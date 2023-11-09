@@ -71,11 +71,11 @@
 
     const myHashChange = () => {
       let firstHash = decodeURIComponent(location.hash.slice(1) || "");
-      searchField.value = firstHash;
-      renderTable(firstHash); // 一開始進入頁面時
+      searchField.value = firstHash; // 將值設定到搜尋欄
+      renderTable(firstHash); // 一開始進入頁面時 // 更新表格
     }
     myHashChange();
-    window.addEventListener("hashchange",myHashChange)
+    window.addEventListener("hashchange",myHashChange) // 當 URL 錨點發生變化時，就會自動呼叫 myHashChange 函數
 
 
     function findProducts(e) {
