@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      position: relative;
+      width: 200px;
+      height: 500px;
+      background-color: #e48787;
+    }
+    #info {
+      position: fixed;
+      top: 0;
+      left: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box1"></div>
+  <div class="box" id="box2" style="background-color: rgb(191, 218, 171)"></div>
+  <div class="box" id="box3"  style="background-color: rgb(171, 194, 218)"></div>
+  <div class="box"></div>
+
+  <div id="info">
+    <a href="#box1">box1</a>
+    <a href="#box2">box2</a>
+    <a href="#box3">box3</a></div>
+
+    <script>
+      const hashHandler = () => {
+        console.log(location.hash); // location 是window底下的物件
+      };
+
+      window.addEventListener("hashchange", hashHandler);
+      hashHandler();
+    </script>
+</body>
+</html>
