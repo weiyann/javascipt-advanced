@@ -57,7 +57,7 @@
         const orderby= orderbySel.value;
 
         const usp =new URLSearchParams({ search, orderby });
-        history.pushState(null, "", "?" + usp.toString());
+        history.pushState(null, "", "?" + usp.toString()); // 把usp轉換成字串得到querystring
       }
     </script>
   </body>

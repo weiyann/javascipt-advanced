@@ -61,7 +61,7 @@
       }
 
       function changeParams(e){
-        if (e.type === "keyup" && e.isComposing) return;
+        if (e.type === "keyup" && e.isComposing) return; // 如果是keyup且正在輸入就不處理
         const search= searchInp.value;
         const orderby= orderbySel.value;
 
@@ -71,10 +71,10 @@
       }
 
       const popstateHandler = (e) => {
-        const usp = new URLSearchParams(location.search);
-        const search = usp.get("search") || "";
+        const usp = new URLSearchParams(location.search); // location.search是querystring字串，用URLSearchParams解析，？會自動呼略
+        const search = usp.get("search") || ""; // 如果沒有search的key就得到空字串
         const orderby = usp.get("orderby") || "sid_asc";
-        searchInp.value = search;
+        searchInp.value = search; // 拿到querysrring的值後再塞回input
         orderbySel.value = orderby;
         renderContent({ search, orderby });
       };

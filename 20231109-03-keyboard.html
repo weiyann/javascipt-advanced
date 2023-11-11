@@ -39,6 +39,7 @@
     const downHandler = (e) => {
       e.preventDefault();
       console.log(e.code);
+      console.log(keyStates);
       keyStates[e.code] = true // 表示開始按下按鍵
 
       let cx = parseInt(ball.style.left);
